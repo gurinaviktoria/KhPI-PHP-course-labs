@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Файли та текст — лабораторна 2</title>
+    <style>
+        body { font-family: sans-serif; max-width: 720px; margin: 32px auto; }
+        fieldset { margin-bottom: 24px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input[type="file"] { margin: 8px 0; }
+        textarea { width: 100%; min-height: 120px; }
+        .links a { margin-right: 16px; }
+    </style>
+</head>
+<body>
+<h1>Лабораторна: завантаження файлів та робота з файлами</h1>
+
+<!-- Форма 1: Завантаження зображення -->
+<fieldset>
+    <legend>1) Завантаження зображення</legend>
+    <form action="process.php" method="post" enctype="multipart/form-data">
+        <label for="file">Оберіть файл (png, jpg, jpeg, ≤ 2 МБ):</label>
+        <input id="file" name="file" type="file" accept="image/png,image/jpeg" required />
+        <br />
+        <input type="submit" value="Завантажити" />
+    </form>
+</fieldset>
+
+<!-- Форма 2: Запис тексту у log.txt -->
+<fieldset>
+    <legend>2) Запис тексту у файл (log.txt)</legend>
+    <form action="text.php" method="post">
+        <label for="message">Введіть текст:</label>
+        <textarea id="message" name="message" placeholder="Ваш текст..." required></textarea>
+        <br />
+        <input type="submit" value="Записати" />
+    </form>
+</fieldset>
+
+<div class="links">
+    <a href="list.php">Переглянути список завантажених файлів</a>
+    <a href="text.php">Переглянути log.txt</a>
+</div>
+</body>
+</html>
